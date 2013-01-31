@@ -33,14 +33,19 @@
 </form>
 
 <?php
-function _main() {
+include "lib/FileSessionHandler.php";
+
+function _main() {	
+	$name = randonNameSession();
+	
+	$handler = new FileSessionHandler();
+	session_set_save_handler($handler, true);
 	session_start();
 	
-	$_SESSION['nameSession'] = randonNameSession();
+	$_SESSION['dados'] = 123;
 	
-	session_name(randonNameSession());
-	echo session_name();
-	
+	$handler->write($name, $_SESSION);
+		
 	if (isset($_GET['throwDice'])) {
 		
 		if (!isset($_POST['qtd'])) {
