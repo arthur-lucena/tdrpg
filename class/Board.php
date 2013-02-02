@@ -1,6 +1,7 @@
 <?php
 class Board {
 	private $id;
+	private $host_user;
 	private $name;
 	private $data;
 	private $players;
@@ -13,12 +14,20 @@ class Board {
 		return $this->id;
 	}
 	
+	function getHostUser() {
+		return $this->host_user;
+	}
+	
+	function setHostUser($host_user) { 
+		$this->host_user = $host_user;
+	}
+	
 	function setName($name) { 
 		$this->name = $name;
 	}
 	
 	function getName() {
-		return $name->name;
+		return $this->name;
 	}
 	
 	function setData($data) { 
