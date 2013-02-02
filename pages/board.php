@@ -1,4 +1,16 @@
-<form id="form" method="post" action="<?php echo curPageURL(); ?>&throwDice=true">
+
+<?php
+/*
+$board = new Board();
+$board->setId($_GET['id']);
+$board->setHostUser($_GET['host_user']);
+$board->setName($_GET['name']);
+*/
+
+$baseBoardUrl = baseURL().'?playing=true&id='.$_GET['id'].'&host_user='.$_GET['host_user'].'&name='.rawurlencode($_GET['name']);
+
+?>
+<form id="form" method="post" action="<?php echo $baseBoardUrl; ?>&throwDice=true" >
 <label for="d4">D4</label>
 <input type="radio" id="d4" name="dice" value="4">
 <br />
@@ -31,3 +43,29 @@
 <br />
 <input type="submit" value="Throw Dice">
 </form>
+<?php 
+
+if (isset($_GET['throwDice'])) {
+	
+	$result = throwDices($_POST['qtd'], $_POST['dice']);
+		
+	$lenght = sizeof($result);
+	
+	for ($i=0; $i < $lenght; $i++) {
+		echo 'Dado numero '.($i+1).': '.$result[$i].'<br />';
+	}
+	
+	$rolledDice = new RolledDice();
+	
+	$rolledDice->setBoardId($_GET['id']);
+	$rolledDice->setHostUser($_GET['host_user']);
+	$rolledDice->setTypeDice('D'.$_POST['dice']);
+	$rolledDice->setQtdDice($_POST['qtd']);
+	$rolledDice->setResult($result);
+	
+	registerRolledDice($rolledDice);
+	
+	//header('location:'.$baseBoardUrl);
+}
+
+?>

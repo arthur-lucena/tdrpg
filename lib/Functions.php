@@ -22,7 +22,7 @@ function randonNameSession() {
 
 function throwDices($qtd, $dice) {
 	if (empty($qtd)) {
-		echo 'Quantidade está vazio!';
+		echo 'Quantidade estï¿½ vazio!';
 		return false;
 	}
 	
@@ -34,7 +34,7 @@ function throwDices($qtd, $dice) {
 	$result = array();
 	
 	for ($i=0; $i<$qtd; $i++) {
-		$result[$i+1] = mt_rand(0, $dice);
+		$result[$i] = mt_rand(0, $dice);
 	}
 	
 	return $result;

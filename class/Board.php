@@ -1,41 +1,50 @@
 <?php
 class Board {
 	private $id;
-	private $host_user;
+	private $hostUser;
 	private $name;
 	private $data;
 	private $players;
-	
-	function setId($id) { 
-		$this->id = $id;
+
+	public function getId() {
+		return $this -> id;
 	}
-	
-	function getId() {
-		return $this->id;
+
+	public function setId($id) {
+		$this -> id = $id;
 	}
-	
-	function getHostUser() {
-		return $this->host_user;
+
+	public function getHostUser() {
+		return $this -> hostUser;
 	}
-	
-	function setHostUser($host_user) { 
-		$this->host_user = $host_user;
+
+	public function setHostUser($hostUser) {
+		$this -> hostUser = $hostUser;
 	}
-	
-	function setName($name) { 
-		$this->name = $name;
+
+	public function getName() {
+		return $this -> name;
 	}
-	
-	function getName() {
-		return $this->name;
+
+	public function setName($name) {
+		$this -> name = $name;
 	}
-	
-	function setData($data) { 
-		$this->data = $data;
+
+	public function getData() {
+		return $this -> data;
 	}
-	
-	function getData() {
-		return $this->data;
+
+	public function setData($data) {
+		$this -> data = $data;
 	}
+
+	public function getPlayers() {
+		return $this -> players;
+	}
+
+	public function setPlayers($players) {
+		$this -> players = $players;
+	}
+
 }
 ?>
