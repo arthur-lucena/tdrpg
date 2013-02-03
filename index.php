@@ -3,7 +3,6 @@
 <?php
 include 'lib/Functions.php';
 include 'lib/Connect.php';
-include 'class/Session.php';
 include 'class/Board.php';
 include 'class/RolledDice.php';
 include 'control/BoardControl.php';

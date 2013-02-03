@@ -70,6 +70,8 @@ overflow-y: scroll;
 		});
 	}
 <?php 
+$jsFunction = '';
+
 if (isset($_POST['id']) && isset($_POST['host'])) {
 	$board = getRegistedBoard($_POST['id'], $_POST['host']);
 	$msg = '';

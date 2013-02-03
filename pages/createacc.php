@@ -8,3 +8,10 @@
     <br />
     <input type="submit" value="enviar" /> 
 </form>
+
+<?php
+if (isset($_GET['createboard'])) {
+    
+    
+}
+?>
