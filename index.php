@@ -5,8 +5,10 @@ include 'lib/Functions.php';
 include 'lib/Connect.php';
 include 'class/Board.php';
 include 'class/RolledDice.php';
+include 'class/Member.php';
 include 'control/BoardControl.php';
 include 'control/RolledDiceControl.php';
+include 'control/MemberControl.php';
 
 // ALTER TABLE  `tb_dice_rolled` ADD INDEX (  `id` )
 

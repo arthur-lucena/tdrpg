@@ -1,5 +1,4 @@
 <?php
-
 function registerBoard($board) {
 	mysql_query('INSERT INTO tb_board(host_user_id, name) VALUES (\''.$board->getHostUser().'\', \''.$board->getName().'\')');
 	
@@ -8,7 +7,7 @@ function registerBoard($board) {
 	$board->setId($row['id']);
 	
 	if(mysql_affected_rows($GLOBALS['link'])==1) {
-		echo 'board successful created';
+		// echo 'board successful created';
 	}
 	
 	return $board;
