@@ -55,7 +55,7 @@ class RolledDice {
 	public function setResult($result) {
 		$this -> result = $result;
 	}
-	
+
 	public function getDtRolled() {
 		return $this -> dtRolled;
 	}
@@ -63,7 +63,17 @@ class RolledDice {
 	public function setDtRolled($dtRolled) {
 		$this -> dtRolled = $dtRolled;
 	}
-	
+
+	public function getJsonData() {
+		$var = get_object_vars($this);
+		
+		foreach ($var as &$value) {
+			if (is_object($value) && method_exists($value, 'getJsonData')) {
+				$value = $value -> getJsonData();
+			}
+		}
+		return $var;
+	}
 
 }
 ?>
