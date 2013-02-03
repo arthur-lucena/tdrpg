@@ -1,3 +1,13 @@
+<style> 
+<!--
+#rolledDices {
+height: 400px;
+width: 225px;
+overflow-y: scroll;
+}
+-->
+</style>
+
 <form method="post" action="<?php echo baseURL(); ?>?seeboard=true&gettable=true">
 	id:<input type="text" name="id" />
 	host:<input type="text" name="host" />
@@ -59,8 +69,6 @@
 			}
 		});
 	}
-
-
 <?php 
 if (isset($_POST['id']) && isset($_POST['host'])) {
 	$board = getRegistedBoard($_POST['id'], $_POST['host']);
@@ -70,38 +78,6 @@ if (isset($_POST['id']) && isset($_POST['host'])) {
 	$msg .= $board->getName().'<br /><br />';
 	
 	$jsFunction = 'getRolledDices('.json_encode($board->getJsonData()).')';
-	
-	
-/*
-	echo $board->getName().'<br /><br />';
-	
-	$rolledDices = getRolledDices($board);
-	
-	$length = sizeof($rolledDices);
-	
-	for ($i = 0; $i < $length; $i++) {
-		echo 'data: '.$rolledDices[$i]->getDtRolled();
-		echo '<br />';
-		
-		echo 'tipo do dado: '.$rolledDices[$i]->getTypeDice();
-		echo '<br />';	
-		
-		echo 'Qtd: '.$rolledDices[$i]->getQtdDice();
-		echo '<br />';	
-		
-		$results = $rolledDices[$i]->getResult();
-		$lengthj = sizeof($results);
-		for ($j = 0; $j < $lengthj; $j++) {
-			echo 'dado numero '.($j+1).': ';
-			echo $results[$j];
-			echo '<br />';
-		}
-		
-		echo json_encode($rolledDices[$i]->getJsonData());
-		
-		echo '<br />---------<br />';
-	}
-*/
 }
 
 echo $jsFunction;

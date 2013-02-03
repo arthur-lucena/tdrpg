@@ -1,14 +1,5 @@
-
 <?php
-/*
-$board = new Board();
-$board->setId($_GET['id']);
-$board->setHostUser($_GET['host_user']);
-$board->setName($_GET['name']);
-*/
-
 $baseBoardUrl = baseURL().'?playing=true&id='.$_GET['id'].'&host_user='.$_GET['host_user'].'&name='.rawurlencode($_GET['name']);
-
 ?>
 <form id="form" method="post" action="<?php echo $baseBoardUrl; ?>&throwDice=true" >
 <label for="d4">D4</label>
@@ -43,8 +34,8 @@ $baseBoardUrl = baseURL().'?playing=true&id='.$_GET['id'].'&host_user='.$_GET['h
 <br />
 <input type="submit" value="Throw Dice">
 </form>
-<?php 
 
+<?php 
 if (isset($_GET['throwDice'])) {
 	
 	$result = throwDices($_POST['qtd'], $_POST['dice']);
@@ -64,8 +55,5 @@ if (isset($_GET['throwDice'])) {
 	$rolledDice->setResult($result);
 	
 	registerRolledDice($rolledDice);
-	
-	//header('location:'.$baseBoardUrl);
 }
-
 ?>

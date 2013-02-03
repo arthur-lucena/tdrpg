@@ -22,6 +22,8 @@ function _main() {
 		include 'pages/board.php';
 	} else if (isset($_GET['seeboard'])) {		
 		include 'pages/seeboard.php';
+	} else if (isset($_GET['createacc'])) {
+		include 'pages/createacc.php';
 	} else {
 		include 'pages/menu.php';
 	}

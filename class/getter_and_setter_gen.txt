@@ -1,1 +1,0 @@
-http://www.icurtain.co.uk/165_PHP_Get_Set_Generator_getters_and_setters_for_public_functions
