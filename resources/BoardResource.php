@@ -1,4 +1,6 @@
 <?php
+define('INCLUDE_CHECK',true);
+
 include '../class/Board.php';
 include '../class/RolledDice.php';
 include '../control/RolledDiceControl.php';

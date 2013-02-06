@@ -27,7 +27,7 @@ function getRegistedBoard($id, $host_user) {
 function createBoard() {	
 	$board = new Board();
 	$board->setName('mesa '.randonNameSession());
-	$board->setHostUser(1);
+	$board->setHostUser($_SESSION['id']);
 	
 	$board = registerBoard($board);
 	

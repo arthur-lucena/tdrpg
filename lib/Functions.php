@@ -4,7 +4,7 @@ function curPageURL() {
 }
 
 function baseURL() {
-	return 'http://localhost/tdrpg/';
+	return 'http://192.168.1.62/tdrpg/';
 }
 
 function randonNameSession() {
@@ -24,6 +24,9 @@ function throwDices($qtd, $dice) {
 	if (empty($qtd)) {
 		echo 'Quantidade est� vazio!';
 		return false;
+	} else if ($qtd > 20) {
+		echo 'o limite maximo é 20 dados';
+		return false;
 	}
 	
 	if (empty($dice)) {
@@ -34,7 +37,7 @@ function throwDices($qtd, $dice) {
 	$result = array();
 	
 	for ($i=0; $i<$qtd; $i++) {
-		$result[$i] = mt_rand(0, $dice);
+		$result[$i] = mt_rand(1, $dice);
 	}
 	
 	return $result;

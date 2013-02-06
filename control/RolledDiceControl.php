@@ -44,8 +44,8 @@ function getLastRolledDice($board, $lastId) {
 	$i = 0;
 	$result = array();
 	
-	while ($i < 3) {
-		sleep(9);
+	while ($i < 9) {
+		sleep(3);
 		
 		$where = $board->getId().' and host_user_id = '.$board->getHostUser().' and id > '.$lastId.' ORDER BY id DESC LIMIT 1';
 		$count = mysql_fetch_object(mysql_query('SELECT count(*) as count FROM tb_dice_rolled WHERE '.$where));
