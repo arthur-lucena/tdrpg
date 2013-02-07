@@ -1,0 +1,33 @@
+<html>
+	<body>
+		<div id="bt">
+			clck
+		</div>
+
+		<div id="cnt">
+		</div>
+
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script type="text/javascript">
+			(function($) {
+				$('#bt').click(function() {
+					$.ajax({
+						type : "GET",
+						url : "http://localhost:8001/getstring",
+						dataType : "jsonp",
+						success : function (response) {responseHandler(response);},
+						error : function () {errorHandler();}
+					});
+				});
+				
+				function responseHandler(response) {
+					console.log('request ok!')
+				}
+				
+				function errorHandler(){
+					console.log('request fail!');
+				}
+			})(jQuery);
+		</script>
+	</body>
+</html>

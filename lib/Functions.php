@@ -4,7 +4,7 @@ function curPageURL() {
 }
 
 function baseURL() {
-	return 'http://192.168.1.62/tdrpg/';
+	return 'http://localhost/tdrpg/';
 }
 
 function randonNameSession() {
