@@ -1,3 +1,17 @@
+<?php
+$jsFunction = '';
+
+if (isset($_POST['id']) && isset($_POST['host'])) {
+	$board = getRegistedBoard($_POST['id'], $_POST['host']);
+	$msg = '';
+	// verificar se foi retornado algum objeto
+	
+	$msg .= $board->getName().'<br /><br />';
+	
+	$jsFunction = 'getRolledDices('.json_encode($board->getJsonData()).')';
+}
+?>
+
 <style> 
 <!--
 #rolledDices {
@@ -54,7 +68,6 @@ overflow-y: scroll;
 							'<br />';
 						}
 						
-						
 						html += '<br />-------<br />';
 						container.append(html);
 		
@@ -69,21 +82,6 @@ overflow-y: scroll;
 			}
 		});
 	}
-<?php 
-$jsFunction = '';
-
-if (isset($_POST['id']) && isset($_POST['host'])) {
-	$board = getRegistedBoard($_POST['id'], $_POST['host']);
-	$msg = '';
-	// verificar se foi retornado algum objeto
-	
-	$msg .= $board->getName().'<br /><br />';
-	
-	$jsFunction = 'getRolledDices('.json_encode($board->getJsonData()).')';
-}
-
-echo $jsFunction;
-?>
-
+	<?php echo $jsFunction; ?>
 })(jQuery);
 </script>
