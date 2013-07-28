@@ -3,10 +3,10 @@ if(!defined('INCLUDE_CHECK')) die('You are not allowed to execute this file dire
 
 /* Database config */
 
-$db_host		= 'db.cauazkfvdwfe.sa-east-1.rds.amazonaws.com';
+$db_host		= 'localhost';
 $db_user		= 'root';
-$db_pass		= 'bilcra56';
-$db_database	= 'db1'; 
+$db_pass		= '';
+$db_database	= 'tdrpg1'; 
 
 /* End config */
 

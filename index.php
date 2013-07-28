@@ -1,4 +1,4 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+﻿<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
 <?php
 define('INCLUDE_CHECK',true);
@@ -33,7 +33,7 @@ function _main() {
 
 			header('Location:?playing=true&id='.$board->getId().'&host_user='.$board->getHostUser().'&name='.$board->getName());
 		} else {
-			echo 'usuario n�o logado, favor <a href="'.baseURL().'?createacc=true">criar uma conta</a> ou <a href="'.baseURL().'?login=true">logar</a>!';
+			echo 'usuario n�o logado, favor <a href="'.baseURL().'?createacc=true">criar uma conta</a> ou <a href="'.baseURL().'?login=true">logar</a>!';
 		}
 	} else if (isset($_GET['playing'])) {
 		echo 'Id da mesa: '.$_GET['id'].'<br />Host da mesa: '.$_GET['host_user'];
@@ -58,3 +58,49 @@ function _main() {
 
 _main();
 ?>
+<!DOCTYPE >
+<html>
+<head>
+    <title>TDRPG</title>
+    
+    <link rel="stylesheet" type="text/css" href="fonts/Bariol-Regular/font.css">
+    
+    <style>
+    body {
+        background-color:#EEE;
+        /*font-size:62.5%;*/
+    }
+    
+    body, input[type=text], input[type=submit], input[type=reset], #content {
+        font-family:'Bariol-Regular';
+        color:#666;
+        outline: none;
+        font-smoothing:antialiased;
+        -moz-font-smoothing:antialiased;
+        -webkit-font-smoothing:antialiased;
+        -o-font-smoothing:antialiased;
+    }
+    /*
+    label {
+        font-size: 1.2em;   
+    }
+    */
+    input[type=text] {
+        width: 260;
+    }
+    /*
+    input[type=text], #submit, #reset, #content {
+        font-size: 1.6em;
+    }
+    */
+    </style>
+</head>
+
+<body>
+<br />
+<br />
+<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by/3.0/deed.pt_BR">
+    <img alt="Licença Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" />
+</a>
+</body>    
+</html>

@@ -22,7 +22,7 @@ function randonNameSession() {
 
 function throwDices($qtd, $dice) {
 	if (empty($qtd)) {
-		echo 'Quantidade est� vazio!';
+		echo 'Quantidade está vazio!';
 		return false;
 	} else if ($qtd > 20) {
 		echo 'o limite maximo é 20 dados';
