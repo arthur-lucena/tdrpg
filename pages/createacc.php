@@ -29,8 +29,6 @@ if (isset($_POST['submit']) && $_POST['submit']=='enviar') {
 		$msg += 'email vazio<br />';
 	}
 	
-	echo var_dump($msg);
-	
 	if ($msg != '') {
 		echo $msg;
 	} else {
@@ -38,10 +36,13 @@ if (isset($_POST['submit']) && $_POST['submit']=='enviar') {
 	    $member->setUser($_POST['user']);
 	    $member->setEmail($_POST['email']);
 	    $member->setPasswd($_POST['passwd']);
+        // TODO adicionar ip e data da criação 
+        // $member->setRegIp();
+        // $member->setDtCreate();
+	            
+	    $member = \Control\MemberControl::createUser($member);  
 	    
-	    createUser($member);  
-	    
-	    if ($member->getId()) {
+	    if ($member->getId() != null) {
 	        echo 'membro registrado!';
 	    }
 	}
