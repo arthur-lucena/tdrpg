@@ -15,27 +15,35 @@
 
 <?php
 if (isset($_POST['submit']) && $_POST['submit']=='enviar') {
+	$msg = '';
+	
 	if (empty($_POST['user'])) {
-		echo 'usuario vazio';
+		$msg += 'usuario vazio<br />';
 	}
 	
 	if (empty($_POST['passwd'])) {
-		echo 'senha vazio';
+		$msg += 'senha vazio<br />';
 	}
 
 	if (empty($_POST['email'])) {
-		echo 'email vazio';
+		$msg += 'email vazio<br />';
 	}
 	
-    $member = new Member();
-    $member->setUser($_POST['user']);
-    $member->setEmail($_POST['email']);
-    $member->setPasswd($_POST['passwd']);
-    
-    createUser($member);  
-    
-    if ($member->getId()) {
-        echo 'membro registrado!';
-    }
+	echo var_dump($msg);
+	
+	if ($msg != '') {
+		echo $msg;
+	} else {
+		$member = new Member();
+	    $member->setUser($_POST['user']);
+	    $member->setEmail($_POST['email']);
+	    $member->setPasswd($_POST['passwd']);
+	    
+	    createUser($member);  
+	    
+	    if ($member->getId()) {
+	        echo 'membro registrado!';
+	    }
+	}
 }
 ?>

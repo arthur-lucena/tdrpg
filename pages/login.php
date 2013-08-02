@@ -23,8 +23,8 @@
 		$member->setUser($_POST['user']);
 		$member->setPasswd($_POST['passwd']);
 		
-		$member = loginUser($member);
-		
+		$member = \Control\MemberControl::loginUser($member);
+		echo var_dump($member);
 		if ($member->getId()) {
 			$_SESSION['id'] = $member->getId();
 			$_SESSION['user'] = $member->getUser();
